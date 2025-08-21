@@ -2,3 +2,4 @@
 dcr-django-test-env/
 
 *.pyc
+testsite/db.sqlite3
