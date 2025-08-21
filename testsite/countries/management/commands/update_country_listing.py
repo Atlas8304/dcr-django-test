@@ -32,12 +32,14 @@ class Command(BaseCommand):
                 self.stdout.write(
                     self.style.SUCCESS("Region: {} - Created".format(region))
                 )
-            country, country_created = Country.objects.get_or_create(
+            country, country_created = Country.objects.update_or_create(
                 name=row["name"],
                 defaults={
                     "alpha2Code": row["alpha2Code"],
                     "alpha3Code": row["alpha3Code"],
+                    "topLevelDomain": row["topLevelDomain"][0],
                     "population": row["population"],
+                    "capital": row["capital"],
                     "region": region,
                 },
             )
