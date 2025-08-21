@@ -5,8 +5,10 @@ class Country(models.Model):
     name = models.CharField(max_length=100)
     alpha2Code = models.CharField(max_length=2)
     alpha3Code = models.CharField(max_length=3)
+    topLevelDomain = models.CharField(max_length=63, blank=True)
     population = models.IntegerField()
-
+    capital = models.CharField(max_length=100, blank=True)
+    
     region = models.ForeignKey(
         "Region",
         on_delete=models.CASCADE,
