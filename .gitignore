@@ -1,3 +1,4 @@
 .vscode/
+dcr-django-test-env/
 
 *.pyc
