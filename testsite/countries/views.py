@@ -6,7 +6,7 @@ from countries.models import Region
 
 def stats(request):
     regions = Region.objects.annotate(
-        num_countries=Count("countries"), total_population=Sum("countries__population")
+        num_countries=Count("countries"), total_population=Sum("countries__population", default=0)
     )
     response = {"regions": []}
     for region in regions:
