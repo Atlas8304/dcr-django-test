@@ -37,7 +37,7 @@ class Command(BaseCommand):
                 defaults={
                     "alpha2Code": row["alpha2Code"],
                     "alpha3Code": row["alpha3Code"],
-                    "topLevelDomain": row["topLevelDomain"][0],
+                    "topLevelDomain": row["topLevelDomain"],
                     "population": row["population"],
                     "capital": row["capital"],
                     "region": region,
